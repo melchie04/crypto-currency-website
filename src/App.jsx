@@ -8,13 +8,13 @@ function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState('');
   const [coin, setCoin] = useState({});
-  const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false';
+  const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false';
 
   useEffect(() => {
     axios.get(url).then(res => {
       setCoins(res.data);
     }).catch(err => {
-      console.log("List Axios Error: " + err);
+      console.log(err);
     });
   }, []);
   
@@ -31,7 +31,7 @@ function App() {
     axios.get(`https://api.coingecko.com/api/v3/coins/${id}`).then(res => {
       setCoin(res.data);
     }).catch(err => {
-      console.log("Modal Axios Error: " + err);
+      console.log(err);
     });
   }
 
