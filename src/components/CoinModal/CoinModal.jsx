@@ -11,7 +11,7 @@ const CoinModal = ({coin}) => {
                             <span className='fst-italic text-muted fw-normal'>#{coin.market_cap_rank}</span>
                             <span className='ps-3'>{coin.name}</span>
                         </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
                         <div className='row border-bottom border-3 border-warning py-3'>
