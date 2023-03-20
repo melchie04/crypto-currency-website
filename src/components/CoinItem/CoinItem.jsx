@@ -1,14 +1,14 @@
 import React from 'react';
 import './CoinItem.css'
 
-const CoinItem = ({coin}) => {
+const CoinItem = ({ coin, getCoin }) => {
   return (
-    <div className="item bg-light w-100 p-3 mb-4 position-relative">
+    <div className="item bg-light w-100 p-3 mb-4 position-relative"  data-bs-toggle="modal" data-bs-target="#coinModal" onClick={() => getCoin(coin.id)}>
         <div className='ribbon position-absolute'>
             <span className='text-danger fw-bold'>#{coin.market_cap_rank}</span>
         </div>
         <h4>
-            <img className='mb-2 me-2' src={coin.image} width="50" height="50" />
+            <img className='mb-2 me-2' src={coin.image} alt="logo" width="50" height="50" />
             {coin.symbol.toUpperCase()}
         </h4>
         <ul className="list-group list-group-flush">
