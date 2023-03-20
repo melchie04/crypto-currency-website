@@ -1,0 +1,17 @@
+:root {
+  --primary: #FEE715;
+  --secondary: #FFCA2C;
+  --bg: #101820;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+}
