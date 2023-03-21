@@ -1,3 +1,7 @@
 nav {
     background-color: var(--primary);
 }
+
+.search {
+    min-width: 150px;
+}
