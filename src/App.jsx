@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
-import Navbar from './components/Navbar/Navbar';
+import axios from "axios";
+import Navbar from "./components/Navbar/Navbar";
 import CoinItem from "./components/CoinItem/CoinItem";
 import CoinModal from "./components/CoinModal/CoinModal";
+import coingecko from "./assets/coingecko-logo.png";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -53,9 +54,13 @@ function App() {
         setCurrency={setCurrency}
       />
       <div className="container-fluid w-100 text-center pt-4">
-        <h3 className="text-warning">CRYPTOCURRENCY PRICES BY MARKET CAP</h3>
+        <h3 className="text-warning">TOP {page} CRYPTOCURRENCY BY MARKET CAP</h3> 
+        <p className="text-light pt-2">
+          <img className="me-1 mb-1" src={coingecko} alt="Coingecko Logo" width="25" />
+          Data provided by <a className="text-light" href="https://www.coingecko.com/">CoinGecko</a>
+        </p>
       </div>
-      <div className="container-fluid d-flex flex-wrap justify-content-evenly w-100 pt-4 px-4">
+      <div className="container-fluid d-flex flex-wrap justify-content-evenly w-100 p-4">
         {filteredCoins.map(coin => (
           <CoinItem 
             coin={coin}
@@ -69,6 +74,10 @@ function App() {
         coin={coin}
         symbol={SYMBOL[currency]}
       />
+      <footer className="bg-dark text-light text-center fw-light p-3">
+        <p className="m-0 p-0">© 2023 Crypto Website. All Rights Reserved.</p>
+        <p className="m-0 p-0 text-muted">Developed by Melchor Bendanillo Callos</p>
+      </footer>
     </div>
   )
 }
