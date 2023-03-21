@@ -1,5 +1,6 @@
 import React from 'react';
 import DOMPurify from 'dompurify';
+import './CoinModal.css'
 
 const CoinModal = ({ coin, symbol }) => {
     return (
@@ -24,8 +25,8 @@ const CoinModal = ({ coin, symbol }) => {
                                 {coin.market_data?.current_price ? <span>{symbol}{coin.market_data.current_price.usd.toLocaleString()}</span> : null}
                             </div>
                         </div>
-                        <div className='row border-bottom border-3 border-warning py-3 text-size'>
-                            <div className='col-12'>
+                        <div className='row border-bottom border-3 border-warning py-3 sm-text-size'>
+                            <div className='col-12 d-flex justify-content-center px-0'>
                                 <table className='w-100 text-center'>
                                     <thead>
                                         <tr>
@@ -50,8 +51,8 @@ const CoinModal = ({ coin, symbol }) => {
                                 </table>
                             </div>
                         </div>
-                        <div className='row border-bottom border-3 border-warning py-3 text-size'>
-                            <div className='col-12'>
+                        <div className='row border-bottom border-3 border-warning py-3 sm-text-size'>
+                            <div className='col-12 px-0'>
                                 <div className='d-flex justify-content-between border-bottom border-1'>
                                     <span className='fw-semibold'>24 Hour Low</span>
                                     {coin.market_data?.low_24h ? <span>{symbol}{coin.market_data.low_24h.usd.toLocaleString()}</span> : null}
