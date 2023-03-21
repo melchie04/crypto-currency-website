@@ -1,7 +1,7 @@
 import React from 'react';
 import './CoinItem.css'
 
-const CoinItem = ({ coin, getCoin }) => {
+const CoinItem = ({ coin, getCoin, symbol }) => {
   return (
     <div className="item bg-light w-100 p-3 mb-4 position-relative"  data-bs-toggle="modal" data-bs-target="#coinModal" onClick={() => getCoin(coin.id)}>
         <div className='ribbon position-absolute'>
@@ -18,7 +18,7 @@ const CoinItem = ({ coin, getCoin }) => {
             </li>
             <li className="list-group-item p-0 mt-2">
                 <span className='text-muted'>Current Price: </span>
-                <span className='fw-semibold'>${coin.current_price.toLocaleString()}</span>
+                <span className='fw-semibold'>{symbol}{coin.current_price.toLocaleString()}</span>
             </li>
             <li className="list-group-item p-0 mt-2">
                 <span className='text-muted'>24h: </span>
@@ -30,11 +30,11 @@ const CoinItem = ({ coin, getCoin }) => {
             </li>
             <li className="list-group-item p-0 mt-2">
                 <span className='text-muted'>24 Volume: </span>
-                <span className='fw-semibold'>${coin.total_volume.toLocaleString()}</span>
+                <span className='fw-semibold'>{symbol}{coin.total_volume.toLocaleString()}</span>
             </li>
             <li className="list-group-item p-0 mt-2">
                 <span className='text-muted'>Mkt Cap: </span>
-                <span className='fw-semibold'>${coin.market_cap.toLocaleString()}</span>
+                <span className='fw-semibold'>{symbol}{coin.market_cap.toLocaleString()}</span>
             </li>
         </ul>
     </div>

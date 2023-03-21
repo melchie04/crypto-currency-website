@@ -1,7 +1,7 @@
 import React from 'react';
 import DOMPurify from 'dompurify';
 
-const CoinModal = ({coin}) => {
+const CoinModal = ({ coin, symbol }) => {
     return (
         <div className="modal fade" id="coinModal" tabIndex="-1" aria-labelledby="coinModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
@@ -21,7 +21,7 @@ const CoinModal = ({coin}) => {
                                 {coin.symbol ? <span className='ps-2'>{coin.symbol.toUpperCase()}/USD</span> : null}
                             </div>
                             <div className='col-auto fs-4 fw-semibold'>
-                                {coin.market_data?.current_price ? <span>${coin.market_data.current_price.usd.toLocaleString()}</span> : null}
+                                {coin.market_data?.current_price ? <span>{symbol}{coin.market_data.current_price.usd.toLocaleString()}</span> : null}
                             </div>
                         </div>
                         <div className='row border-bottom border-3 border-warning py-3 text-size'>
@@ -54,15 +54,15 @@ const CoinModal = ({coin}) => {
                             <div className='col-12'>
                                 <div className='d-flex justify-content-between border-bottom border-1'>
                                     <span className='fw-semibold'>24 Hour Low</span>
-                                    {coin.market_data?.low_24h ? <span>${coin.market_data.low_24h.usd.toLocaleString()}</span> : null}
+                                    {coin.market_data?.low_24h ? <span>{symbol}{coin.market_data.low_24h.usd.toLocaleString()}</span> : null}
                                 </div>
                                 <div className='d-flex justify-content-between border-bottom border-1'>
                                     <span className='fw-semibold'>24 Hour High</span>
-                                    {coin.market_data?.high_24h ? <span>${coin.market_data.high_24h.usd.toLocaleString()}</span> : null} 
+                                    {coin.market_data?.high_24h ? <span>{symbol}{coin.market_data.high_24h.usd.toLocaleString()}</span> : null} 
                                 </div>
                                 <div className='d-flex justify-content-between border-bottom border-1'>
                                     <span className='fw-semibold'>Market Cap</span>
-                                    {coin.market_data?.market_cap ? <span>${coin.market_data.market_cap.usd.toLocaleString()}</span> : null}
+                                    {coin.market_data?.market_cap ? <span>{symbol}{coin.market_data.market_cap.usd.toLocaleString()}</span> : null}
                                 </div>
                                 <div className='d-flex justify-content-between border-bottom border-1'>
                                     <span className='fw-semibold'>Circulating Supply</span>
