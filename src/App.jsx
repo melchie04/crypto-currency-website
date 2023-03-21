@@ -57,7 +57,7 @@ function App() {
         <h3 className="text-warning">TOP {page} CRYPTOCURRENCY BY MARKET CAP</h3> 
         <p className="text-light pt-2">
           <img className="me-1 mb-1" src={coingecko} alt="Coingecko Logo" width="25" />
-          Data provided by <a className="text-light" href="https://www.coingecko.com/">CoinGecko</a>
+          Data provided by <a className="text-warning text-decoration-none border-bottom border-warning" href="https://www.coingecko.com/" target="_blank">CoinGecko</a>
         </p>
       </div>
       <div className="container-fluid d-flex flex-wrap justify-content-evenly w-100 p-4">

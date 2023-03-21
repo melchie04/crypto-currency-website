@@ -3,6 +3,7 @@
   --secondary: #FFCA2C;
   --bg: #101820;
 }
+
 *,
 *::before,
 *::after {
@@ -14,4 +15,8 @@
 body {
   margin: 0;
   background-color: var(--bg);
+}
+
+.wrapper div .yellow:hover {
+  color: var(--secondary);
 }
