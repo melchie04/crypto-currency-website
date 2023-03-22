@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
+import Header from "./components/Header/Header";
 import CoinItem from "./components/CoinItem/CoinItem";
 import CoinModal from "./components/CoinModal/CoinModal";
-import coingecko from "./assets/coingecko-logo.png";
+import Footer from "./components/Footer/Footer"
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -45,40 +46,30 @@ function App() {
   }
 
   return (
-    <div className='wrapper'>
+    <>
       <Navbar
         searchCoins={searchCoins}
-        page={page}
         setPage={setPage}
-        currency={currency}
         setCurrency={setCurrency}
       />
-      <div className="container-fluid w-100 text-center pt-4">
-        <h3 className="text-warning">TOP {page} CRYPTOCURRENCY BY MARKET CAP</h3> 
-        <p className="text-light pt-2">
-          <img className="me-1 mb-1" src={coingecko} alt="Coingecko Logo" width="25" />
-          Data provided by <a className="text-warning text-decoration-none border-bottom border-warning" href="https://www.coingecko.com/" target="_blank">CoinGecko</a>
-        </p>
-      </div>
-      <div className="container-fluid d-flex flex-wrap justify-content-evenly w-100 p-4">
-        {filteredCoins.map(coin => (
-          <CoinItem 
-            coin={coin}
-            getCoin={getCoin}
-            key={coin.id}
-            symbol={SYMBOL[currency]}
-          />
-        ))}
-      </div>
+
+      <Header 
+        page={page}
+      />
+
+      <CoinItem
+        filteredCoins={filteredCoins}
+        getCoin={getCoin}
+        symbol={SYMBOL[currency]}
+      />
+       
       <CoinModal
         coin={coin}
         symbol={SYMBOL[currency]}
       />
-      <footer className="bg-dark text-light text-center fw-light p-3">
-        <p className="m-0 p-0">© 2023 Crypto Website. All Rights Reserved.</p>
-        <p className="m-0 p-0 text-muted">Developed by Melchor Bendanillo Callos</p>
-      </footer>
-    </div>
+
+      <Footer />
+    </>
   )
 }
 

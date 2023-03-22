@@ -4,19 +4,6 @@
   --bg: #101820;
 }
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
   background-color: var(--bg);
-}
-
-.wrapper div .yellow:hover {
-  color: var(--secondary);
 }
