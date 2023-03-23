@@ -14,7 +14,7 @@ function App() {
   const [coin, setCoin] = useState({});
   const [page, setPage] = useState("10");
   const [currency, setCurrency] = useState("usd");
-  const thirdPartyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const thirdPartyUrl = "https://cors-anywhere.herokuapp.com/";
   const url = `${thirdPartyUrl}https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${page}&page=1&sparkline=false`;
   const topUrl = `${thirdPartyUrl}https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=10&page=1&sparkline=false`;
 
