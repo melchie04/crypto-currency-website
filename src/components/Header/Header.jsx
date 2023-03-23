@@ -26,7 +26,7 @@ const Header = ({ topCoins, getCoin, symbol }) => {
         <br />
         <span style={{ fontSize: 22, fontWeight: 500 }}>
           {symbol}
-          {coin?.current_price.toFixed(2).toLocaleString()}
+          {coin?.current_price.toLocaleString()}
         </span>
       </div>
     );
