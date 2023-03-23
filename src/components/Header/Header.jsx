@@ -7,13 +7,13 @@ const Header = ({ topCoins, getCoin, symbol }) => {
     let profit = coin?.price_change_percentage_24h >= 0;
     return (
       <div
-        className="carousel text-light py-3 px-0"
+        className="carousel text-light py-3 px-0 align-items-center"
         data-bs-toggle="modal"
         data-bs-target="#coinModal"
         onClick={() => getCoin(coin.id)}
         key={coin.id}
       >
-        <img src={coin?.image} alt={coin.name} height="80" />
+        <img src={coin?.image} alt={coin.name} height="80" className="mb-2" />
         <br />
         <span>
           {coin?.symbol.toUpperCase()}
@@ -24,7 +24,7 @@ const Header = ({ topCoins, getCoin, symbol }) => {
           </span>
         </span>
         <br />
-        <span style={{ fontSize: 22, fontWeight: 500 }}>
+        <span className="fw-bold fs-5">
           {symbol}
           {coin?.current_price.toLocaleString()}
         </span>
