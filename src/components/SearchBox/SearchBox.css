@@ -46,8 +46,8 @@
   }
 }
 
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 350px) {
   .box input {
-    font-size: 0.85rem;
+    font-size: 14px;
   }
 }
