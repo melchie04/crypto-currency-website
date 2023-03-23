@@ -46,7 +46,6 @@ function App() {
       .get(topUrl)
       .then((res) => {
         setTopCoins(res.data);
-        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
