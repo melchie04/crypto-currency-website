@@ -1,0 +1,38 @@
+.custom-header {
+  height: 60vh !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../assets/image-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #070308;
+}
+
+.custom-header h1 {
+  font-size: 4rem;
+}
+
+.success {
+  font-weight: 500;
+  color: #0ecb81;
+}
+
+.danger {
+  font-weight: 500;
+  color: #ff0000;
+}
+
+.carousel {
+  cursor: pointer;
+}
+
+.carousel:hover {
+  transform: scale(1.10);
+  transition: 0.3s;
+}
+
+@media only screen and (max-width: 480px) {
+  .custom-header h1 {
+    font-size: 3rem;
+  }
+}

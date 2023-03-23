@@ -1,16 +1,66 @@
-import React from 'react';
-import coingecko from "../../assets/coingecko-logo.png";
+import React from "react";
+import AliceCarousel from "react-alice-carousel";
+import "./Header.css";
 
-const Header = ({ page }) => {
+const Header = ({ topCoins, getCoin, symbol }) => {
+  const items = topCoins.map((coin) => {
+    let profit = coin?.price_change_percentage_24h >= 0;
+    return (
+      <div
+        className="carousel text-light py-3 px-0"
+        data-bs-toggle="modal"
+        data-bs-target="#coinModal"
+        onClick={() => getCoin(coin.id)}
+        key={coin.id}
+      >
+        <img src={coin?.image} alt={coin.name} height="80" />
+        <br />
+        <span>
+          {coin?.symbol.toUpperCase()}
+          &nbsp;
+          <span className={profit > 0 ? "success" : "danger"}>
+            {profit && "+"}
+            {coin?.price_change_percentage_24h?.toFixed(2)}%
+          </span>
+        </span>
+        <br />
+        <span style={{ fontSize: 22, fontWeight: 500 }}>
+          {symbol}
+          {coin?.current_price.toFixed(2).toLocaleString()}
+        </span>
+      </div>
+    );
+  });
+
+  const responsive = {
+    0: {
+      items: 2,
+    },
+    512: {
+      items: 4,
+    },
+  };
+
   return (
-    <div className="container-fluid w-100 text-center pt-4">
-        <h3 className="text-warning">TOP {page} CRYPTOCURRENCY BY MARKET CAP</h3> 
-        <p className="text-light pt-2">
-            <img className="me-1 mb-1" src={coingecko} alt="Coingecko Logo" width="25" />
-            Data provided by <a className="text-warning text-decoration-none border-bottom border-warning" href="https://www.coingecko.com/" target="_blank">CoinGecko</a>
-        </p>
+    <div className="container-fluid pt-5 text-center custom-header">
+      <h1 className="text-light fw-bolder pb-5">
+        Cryp <span className="text-warning">2</span> Web
+      </h1>
+      <div className="container-fluid h-50 d-flex align-items-center px-0">
+        <AliceCarousel
+          mouseTracking
+          infinite
+          autoPlayInterval={1000}
+          animationDuration={1500}
+          disableDotsControls
+          disableButtonsControls
+          responsive={responsive}
+          items={items}
+          autoPlay
+        />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

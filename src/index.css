@@ -1,9 +1,19 @@
 :root {
-  --primary: #FEE715;
-  --secondary: #FFCA2C;
+  --primary: #fee715;
+  --secondary: #ffca2c;
   --bg: #101820;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--bg);
+  min-width: 280px;
 }
