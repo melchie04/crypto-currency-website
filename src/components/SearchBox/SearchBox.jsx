@@ -20,7 +20,7 @@ const SearchBox = ({ searchCoins, page }) => {
           <input
             type="search"
             className="bg-transparent text-light flex-grow h-100 w-100 border-0"
-            placeholder="Search Your Crypto Currency"
+            placeholder="Search Crypto Currency"
             aria-label="Search"
             onChange={searchCoins}
           />
