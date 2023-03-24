@@ -7,49 +7,82 @@ import CoinModal from "./components/CoinModal/CoinModal";
 import Footer from "./components/Footer/Footer";
 import SearchBox from "./components/SearchBox/SearchBox";
 
+export const SYMBOL = {
+  usd: "$",
+  eur: "€",
+  jpy: "¥",
+  php: "₱",
+};
+
 function App() {
   const [coins, setCoins] = useState([]);
-  const [topCoins, setTopCoins] = useState([]);
+  const [coinsLoading, setCoinsLoading] = useState(false);
   const [search, setSearch] = useState("");
-  const [coin, setCoin] = useState({});
+
+  const [topCoins, setTopCoins] = useState([]);
+  const [topCoinsLoading, setTopCoinsLoading] = useState(false);
+
   const [page, setPage] = useState("10");
   const [currency, setCurrency] = useState("usd");
-  const thirdPartyUrl = "https://cors-anywhere.herokuapp.com/";
-  const url = `${thirdPartyUrl}https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${page}&page=1&sparkline=false`;
-  const topUrl = `${thirdPartyUrl}https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=10&page=1&sparkline=false`;
 
-  const SYMBOL = {
-    usd: "$",
-    eur: "€",
-    jpy: "¥",
-    php: "₱",
-  };
+  const [id, setId] = useState("");
+  const [coin, setCoin] = useState({});
+  const [coinLoading, setCoinLoading] = useState(false);
+
+  const coinsUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${page}&page=1&sparkline=false`;
+  const coinUrl = `https://api.coingecko.com/api/v3/coins/${id}`;
+
+  const [currentId, setcurrentId] = useState("");
+  const [currentPage, setcurrentPage] = useState("");
+  const [currentCurrency, setcurrentCurrency] = useState("");
 
   useEffect(() => {
-    getCoins();
-    getTopCoins();
-  }, [page, currency]);
+    if (currentCurrency !== currency || currentPage !== page) {
+      getCoins();
+    }
+    if (currentId != id) {
+      getCoin();
+    }
+  }, [id, page, currency]);
 
   const getCoins = async () => {
+    setTopCoinsLoading(true);
+    setCoinsLoading(true);
     await axios
-      .get(url)
+      .get(coinsUrl, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .then((res) => {
         setCoins(res.data);
+        setTopCoins(res.data.slice(0, 10));
       })
       .catch((err) => {
         console.log(err);
       });
+    setcurrentPage(page);
+    setcurrentCurrency(currency);
+    setTopCoinsLoading(false);
+    setCoinsLoading(false);
   };
 
-  const getTopCoins = async () => {
+  const getCoin = async () => {
+    setCoinLoading(true);
     await axios
-      .get(topUrl)
+      .get(coinUrl, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .then((res) => {
-        setTopCoins(res.data);
+        setCoin(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
+    setcurrentId(id);
+    setCoinLoading(false);
   };
 
   const searchCoins = (e) => {
@@ -62,32 +95,42 @@ function App() {
       coin.symbol.toLowerCase().includes(search.toLowerCase())
   );
 
-  const getCoin = async (id) => {
-    await axios
-      .get(`${thirdPartyUrl}https://api.coingecko.com/api/v3/coins/${id}`)
-      .then((res) => {
-        setCoin(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
   return (
     <>
       <Navbar setPage={setPage} setCurrency={setCurrency} />
 
-      <Header topCoins={topCoins} getCoin={getCoin} symbol={SYMBOL[currency]} />
-
-      <SearchBox searchCoins={searchCoins} page={page} />
-
-      <CoinItem
-        filteredCoins={filteredCoins}
-        getCoin={getCoin}
+      <Header
+        topCoins={topCoins}
+        topCoinsLoading={topCoinsLoading}
+        setId={setId}
         symbol={SYMBOL[currency]}
       />
 
-      <CoinModal coin={coin} symbol={SYMBOL[currency]} />
+      <SearchBox searchCoins={searchCoins} page={page} />
+
+      {coinsLoading ? (
+        <div className="progress">
+          <div
+            className="progress-bar progress-bar-striped progress-bar-animated bg-warning w-100"
+            role="progressbar"
+            aria-valuenow="100"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+      ) : (
+        <CoinItem
+          filteredCoins={filteredCoins}
+          setId={setId}
+          symbol={SYMBOL[currency]}
+        />
+      )}
+
+      <CoinModal
+        coin={coin}
+        coinLoading={coinLoading}
+        symbol={SYMBOL[currency]}
+      />
 
       <Footer />
     </>

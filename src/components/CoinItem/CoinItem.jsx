@@ -1,7 +1,7 @@
 import React from "react";
 import "./CoinItem.css";
 
-const CoinItem = ({ filteredCoins, getCoin, symbol }) => {
+const CoinItem = ({ filteredCoins, setId, symbol }) => {
   return (
     <div className="container-fluid d-flex flex-wrap justify-content-evenly w-100 p-4">
       {filteredCoins.map((coin) => (
@@ -9,7 +9,7 @@ const CoinItem = ({ filteredCoins, getCoin, symbol }) => {
           className="item bg-light w-100 p-3 mb-4 position-relative"
           data-bs-toggle="modal"
           data-bs-target="#coinModal"
-          onClick={() => getCoin(coin.id)}
+          onClick={() => setId(coin.id)}
           key={coin.id}
         >
           <div className="ribbon position-absolute">

@@ -2,7 +2,7 @@ import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "./Header.css";
 
-const Header = ({ topCoins, getCoin, symbol }) => {
+const Header = ({ topCoins, topCoinsLoading, setId, symbol }) => {
   const items = topCoins.map((coin) => {
     let profit = coin?.price_change_percentage_24h >= 0;
     return (
@@ -10,7 +10,7 @@ const Header = ({ topCoins, getCoin, symbol }) => {
         className="carousel text-light py-3 px-0 align-items-center"
         data-bs-toggle="modal"
         data-bs-target="#coinModal"
-        onClick={() => getCoin(coin.id)}
+        onClick={() => setId(coin.id)}
         key={coin.id}
       >
         <img src={coin?.image} alt={coin.name} height="80" className="mb-2" />
@@ -46,19 +46,23 @@ const Header = ({ topCoins, getCoin, symbol }) => {
       <h1 className="text-light fw-bolder pb-5">
         Cryp <span className="text-warning">2</span> Web
       </h1>
-      <div className="container-fluid h-50 d-flex align-items-center px-0">
-        <AliceCarousel
-          mouseTracking
-          infinite
-          autoPlayInterval={1000}
-          animationDuration={1500}
-          disableDotsControls
-          disableButtonsControls
-          responsive={responsive}
-          items={items}
-          autoPlay
-        />
-      </div>
+      {topCoinsLoading ? (
+        <div className="loader mt-5"></div>
+      ) : (
+        <div className="container-fluid h-50 d-flex align-items-center px-0">
+          <AliceCarousel
+            mouseTracking
+            infinite
+            autoPlayInterval={1000}
+            animationDuration={1500}
+            disableDotsControls
+            disableButtonsControls
+            responsive={responsive}
+            items={items}
+            autoPlay
+          />
+        </div>
+      )}
     </div>
   );
 };
