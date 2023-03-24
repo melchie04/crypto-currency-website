@@ -1,8 +1,8 @@
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
-import "./Header.css";
+import "./Banner.css";
 
-const Header = ({ topCoins, topCoinsLoading, setId, symbol }) => {
+const Banner = ({ topCoins, topCoinsLoading, setId, symbol }) => {
   const items = topCoins.map((coin) => {
     let profit = coin?.price_change_percentage_24h >= 0;
     return (
@@ -67,4 +67,4 @@ const Header = ({ topCoins, topCoinsLoading, setId, symbol }) => {
   );
 };
 
-export default Header;
+export default Banner;

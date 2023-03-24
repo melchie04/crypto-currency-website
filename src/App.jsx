@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
-import Header from "./components/Header/Header";
+import Banner from "./components/Banner/Banner";
+import SearchBox from "./components/SearchBox/SearchBox";
 import CoinItem from "./components/CoinItem/CoinItem";
 import CoinModal from "./components/CoinModal/CoinModal";
 import Footer from "./components/Footer/Footer";
-import SearchBox from "./components/SearchBox/SearchBox";
 
 export const SYMBOL = {
   usd: "$",
@@ -99,7 +99,7 @@ function App() {
     <>
       <Navbar setPage={setPage} setCurrency={setCurrency} />
 
-      <Header
+      <Banner
         topCoins={topCoins}
         topCoinsLoading={topCoinsLoading}
         setId={setId}
