@@ -10,7 +10,7 @@
     Coingecko API.
   </p>
   <p align="left">
-    🌱 This project was created to help me learn ReactJS and Vite and is still in development.
+    🌱 This project was created to help me learn ReactJS and Vite, and it is still in development.
   </p>
   <h3 align="left">Here are some languages and tools that I used:</h3>
   <div>
