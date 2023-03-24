@@ -372,7 +372,7 @@ const CoinModal = ({ coin, coinLoading, symbol }) => {
                   <p
                     dangerouslySetInnerHTML={{
                       __html: DOMPurify.sanitize(
-                        coin.description ? coin.description.en : ""
+                        coin.description ? coin.description.en : "There are no descriptions in English."
                       ),
                     }}
                   ></p>
