@@ -3,7 +3,7 @@ import coingecko from "../../assets/coingecko-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light text-center fw-light p-3">
+    <footer className="bg-transparent text-light text-center fw-light p-3">
       <p className="m-0 p-0">© 2023 Crypto Website. All Rights Reserved.</p>
       <p className="text-light m-0 px-0 py-1">
         <img className="me-1 mb-1" src={coingecko} alt="Coingecko" width="18" />

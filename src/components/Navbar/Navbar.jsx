@@ -11,7 +11,7 @@ const Navbar = ({ setPage, setCurrency }) => {
   };
 
   return (
-    <nav className="navbar bg-dark bg-body-tertiary">
+    <nav className="navbar bg-transparent bg-body-tertiary">
       <div className="container-fluid px-3">
         <a className="navbar-brand fs-3 fw-bolder text-warning" href="#">
           CRYP2WEB

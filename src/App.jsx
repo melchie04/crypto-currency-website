@@ -29,8 +29,9 @@ function App() {
   const [coin, setCoin] = useState({});
   const [coinLoading, setCoinLoading] = useState(false);
 
-  const coinsUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${page}&page=1&sparkline=false`;
-  const coinUrl = `https://api.coingecko.com/api/v3/coins/${id}`;
+  const proxyServer = "";
+  const coinsUrl = `${proxyServer}https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${page}&page=1&sparkline=false`;
+  const coinUrl = `${proxyServer}https://api.coingecko.com/api/v3/coins/${id}`;
 
   const [currentId, setcurrentId] = useState("");
   const [currentPage, setcurrentPage] = useState("");
