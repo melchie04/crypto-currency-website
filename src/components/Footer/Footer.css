@@ -1,0 +1,7 @@
+.border-yellow {
+  border-color: var(--primary) !important;
+}
+
+.text-yellow {
+  color: var(--primary) !important;
+}

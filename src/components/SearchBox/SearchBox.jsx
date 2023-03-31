@@ -7,12 +7,12 @@ const SearchBox = ({ searchCoins, page }) => {
   return (
     <>
       <div className="container-fluid text-center pt-5">
-        <h3 className="text-warning">
+        <h3 className="text-yellow">
           TOP {page} CRYPTO CURRENCY BY MARKET CAP
         </h3>
       </div>
       <div className="container-fluid d-flex justify-content-center py-3">
-        <div className="box bg-transparent p-2 d-flex align-items-center border-bottom border-2 border-warning">
+        <div className="box bg-transparent p-2 d-flex align-items-center border-bottom border-3">
           <FontAwesomeIcon
             className="fs-5 text-light text-muted px-2"
             icon={faSearch}

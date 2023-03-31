@@ -13,7 +13,7 @@ const CoinItem = ({ filteredCoins, setId, symbol }) => {
           key={coin.id}
         >
           <div className="ribbon position-absolute">
-            <span className="text-danger fw-bold">#{coin.market_cap_rank}</span>
+            <span className="danger fw-bold">#{coin.market_cap_rank}</span>
           </div>
           <h4>
             <img
@@ -40,11 +40,11 @@ const CoinItem = ({ filteredCoins, setId, symbol }) => {
             <li className="list-group-item p-0 mt-2">
               <span className="text-muted">24h: </span>
               {coin.price_change_percentage_24h < 0 ? (
-                <span className="text-danger fw-semibold">
+                <span className="danger fw-semibold">
                   {coin.price_change_percentage_24h.toFixed(2)}
                 </span>
               ) : (
-                <span className="text-success fw-semibold">
+                <span className="success fw-semibold">
                   {coin.price_change_percentage_24h.toFixed(2)}
                 </span>
               )}

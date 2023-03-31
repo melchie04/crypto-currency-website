@@ -1,11 +1,15 @@
 .custom-header {
-  height: 60vh !important;
+  height: 55vh !important;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../../assets/image-bg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #070308;
+}
+
+.text-yellow {
+  color: var(--primary) !important;
 }
 
 .custom-header h1 {
@@ -33,7 +37,7 @@
 
 .loader {
   border: 8px solid rgba(0, 0, 0, 0.25);
-  border-top: 8px solid var(--secondary);
+  border-top: 8px solid var(--primary);
   border-radius: 50%;
   width: 60px;
   height: 60px;

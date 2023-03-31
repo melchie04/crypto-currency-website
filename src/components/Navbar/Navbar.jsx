@@ -13,13 +13,13 @@ const Navbar = ({ setPage, setCurrency }) => {
   return (
     <nav className="navbar bg-transparent bg-body-tertiary">
       <div className="container-fluid px-3">
-        <a className="navbar-brand fs-3 fw-bolder text-warning" href="#">
+        <a className="navbar-brand fs-3 fw-bolder text-yellow" href="#">
           CRYP2WEB
         </a>
         <form className="row d-flex" role="search">
-          <div className="col-auto d-flex align-items-center position-relative my-1 px-1">
+          <div className="col-auto d-flex align-items-center position-relative my-1 px-2">
             <select
-              className="form-select bg-transparent text-light"
+              className="form-select  form-select-sm bg-transparent text-light"
               aria-label="Select Fiat"
               onChange={changeCurrency}
             >
@@ -29,9 +29,9 @@ const Navbar = ({ setPage, setCurrency }) => {
               <option value="php">PHP</option>
             </select>
           </div>
-          <div className="col-auto d-flex align-items-center position-relative my-1 px-1">
+          <div className="col-auto d-flex align-items-center position-relative my-1 px-2">
             <select
-              className="form-select bg-transparent text-light"
+              className="form-select  form-select-sm bg-transparent text-light"
               aria-label="Select Page"
               onChange={changePage}
             >

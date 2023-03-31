@@ -34,6 +34,10 @@
   cursor: pointer;
 }
 
+.text-yellow {
+  color: var(--primary) !important;
+}
+
 @media only screen and (max-width: 845px) {
   .box {
     width: 70%;

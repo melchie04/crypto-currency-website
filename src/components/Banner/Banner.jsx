@@ -43,8 +43,8 @@ const Banner = ({ topCoins, topCoinsLoading, setId, symbol }) => {
 
   return (
     <div className="container-fluid pt-5 text-center custom-header">
-      <h1 className="text-light fw-bolder pb-5">
-        Cryp <span className="text-warning">2</span> Web
+      <h1 className="text-light fw-bolder pb-4">
+        Cryp <span className="text-yellow">2</span> Web
       </h1>
       {topCoinsLoading ? (
         <div className="loader mt-5"></div>

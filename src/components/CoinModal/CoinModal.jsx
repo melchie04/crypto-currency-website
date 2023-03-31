@@ -277,7 +277,16 @@ const CoinModal = ({ coin, coinLoading, symbol }) => {
                           <td className="border pt-3 border-2">
                             {coin.market_data
                               ?.price_change_percentage_1h_in_currency ? (
-                              <p>
+                              <p
+                                style={{
+                                  color:
+                                    coin.market_data
+                                      .price_change_percentage_1h_in_currency
+                                      .usd <= 0
+                                      ? "#ff0000"
+                                      : "#0ecb81",
+                                }}
+                              >
                                 {coin.market_data.price_change_percentage_1h_in_currency.usd.toFixed(
                                   1
                                 )}
@@ -288,7 +297,16 @@ const CoinModal = ({ coin, coinLoading, symbol }) => {
                           <td className="border pt-3 border-2">
                             {coin.market_data
                               ?.price_change_percentage_24h_in_currency ? (
-                              <p>
+                              <p
+                                style={{
+                                  color:
+                                    coin.market_data
+                                      .price_change_percentage_24h_in_currency
+                                      .usd <= 0
+                                      ? "#ff0000"
+                                      : "#0ecb81",
+                                }}
+                              >
                                 {coin.market_data.price_change_percentage_24h_in_currency.usd.toFixed(
                                   1
                                 )}
@@ -298,8 +316,17 @@ const CoinModal = ({ coin, coinLoading, symbol }) => {
                           </td>
                           <td className="border pt-3 border-2">
                             {coin.market_data
-                              ?.price_change_percentage_24h_in_currency ? (
-                              <p>
+                              ?.price_change_percentage_7d_in_currency ? (
+                              <p
+                                style={{
+                                  color:
+                                    coin.market_data
+                                      .price_change_percentage_7d_in_currency
+                                      .usd <= 0
+                                      ? "#ff0000"
+                                      : "#0ecb81",
+                                }}
+                              >
                                 {coin.market_data.price_change_percentage_7d_in_currency.usd.toFixed(
                                   1
                                 )}
@@ -309,8 +336,17 @@ const CoinModal = ({ coin, coinLoading, symbol }) => {
                           </td>
                           <td className="border pt-3 border-2">
                             {coin.market_data
-                              ?.price_change_percentage_24h_in_currency ? (
-                              <p>
+                              ?.price_change_percentage_14d_in_currency ? (
+                              <p
+                                style={{
+                                  color:
+                                    coin.market_data
+                                      .price_change_percentage_14d_in_currency
+                                      .usd <= 0
+                                      ? "#ff0000"
+                                      : "#0ecb81",
+                                }}
+                              >
                                 {coin.market_data.price_change_percentage_14d_in_currency.usd.toFixed(
                                   1
                                 )}
@@ -320,8 +356,17 @@ const CoinModal = ({ coin, coinLoading, symbol }) => {
                           </td>
                           <td className="border pt-3 border-2">
                             {coin.market_data
-                              ?.price_change_percentage_24h_in_currency ? (
-                              <p>
+                              ?.price_change_percentage_30d_in_currency ? (
+                              <p
+                                style={{
+                                  color:
+                                    coin.market_data
+                                      .price_change_percentage_30d_in_currency
+                                      .usd <= 0
+                                      ? "#ff0000"
+                                      : "#0ecb81",
+                                }}
+                              >
                                 {coin.market_data.price_change_percentage_30d_in_currency.usd.toFixed(
                                   1
                                 )}
@@ -331,8 +376,17 @@ const CoinModal = ({ coin, coinLoading, symbol }) => {
                           </td>
                           <td className="border pt-3 border-2">
                             {coin.market_data
-                              ?.price_change_percentage_24h_in_currency ? (
-                              <p>
+                              ?.price_change_percentage_1y_in_currency ? (
+                              <p
+                                style={{
+                                  color:
+                                    coin.market_data
+                                      .price_change_percentage_1y_in_currency
+                                      .usd <= 0
+                                      ? "#ff0000"
+                                      : "#0ecb81",
+                                }}
+                              >
                                 {coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
                                   1
                                 )}

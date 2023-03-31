@@ -1,5 +1,6 @@
 import React from "react";
 import coingecko from "../../assets/coingecko-logo.png";
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <img className="me-1 mb-1" src={coingecko} alt="Coingecko" width="18" />
         Data provided by{" "}
         <a
-          className="text-warning text-decoration-none border-bottom border-warning"
+          className="text-yellow text-decoration-none border-bottom border-yellow"
           href="https://www.coingecko.com/"
           target="_blank"
         >
