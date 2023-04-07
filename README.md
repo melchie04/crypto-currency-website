@@ -2,10 +2,10 @@
 <h3 align="center" style="margin: 0">Crypto Currency Website</h3>
 
 <p align="left">
-  This is a crypto currency website that shows the list of the 10 to 100 most valuable digital assets based on their market capitalization and allows users to view detailed information about any currency they are interested in. 
+  This is a crypto currency website that shows a list of most valuable digital assets based on their market capitalization and allows users to view detailed information about any currency they are interested in.
 </p>
 <p align="left">⚠️ The project occasionally runs into issues with COR policy.</p>
-<p align="left">🌱 The purpose of this project is to help me learn how to use Vite with the ReactJS framework and expand my knowledge of how to integrate with APIs. I made the decision to build a website that will interface with a crypto currency API because I'm interested in both nfts and crypto currencies. This website uses the Coingecko API and is my first React and API-integrated project.</p>
+<p align="left">🌱 The purpose of this project is to help me learn how to use Vite with the ReactJS framework and expand my knowledge of how to integrate with APIs. This website uses the Coingecko API and is my first React and API-integrated project.</p>
 
 <h3 align="left">Here are some languages and tools that I used:</h3>
 <p align="left">
